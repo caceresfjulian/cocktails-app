@@ -9,9 +9,9 @@ export const Router = () => {
     <BrowserRouter>
       <HeaderSection />
       <Routes>
-        <Route exact path="/random-search" element={<RandomSearchView />} />
-        {/* <Route path="*" element={<h1>Not found</h1>} /> */}
         <Route exact path="/" element={<SearchView />} />
+        <Route path="/random-search" element={<RandomSearchView />} />
+        {/* <Route path="*" element={<h1>Not found</h1>} /> */}
       </Routes>
     </BrowserRouter>
   )
