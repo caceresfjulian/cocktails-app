@@ -16,7 +16,7 @@ const RandomCocktailSection = () => {
   if (!isLoading && error) alert(error)
 
   useEffect(() => {
-    dispatch(onGetDrinkThunk())
+    dispatch(onGetDrinkThunk({ isFirstTime: true }))
   }, [dispatch])
 
   return (
@@ -30,7 +30,7 @@ const RandomCocktailSection = () => {
           style={{ margin: '12px', borderRadius: '100%', height: '100px', width: '100px' }}
           variant="contained"
           color="primary"
-          onClick={() => dispatch(onGetDrinkThunk())}
+          onClick={() => dispatch(onGetDrinkThunk({ isFirstTime: false }))}
         >
           Get a new one
         </Button>

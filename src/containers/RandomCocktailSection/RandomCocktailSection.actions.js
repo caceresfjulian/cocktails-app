@@ -12,12 +12,16 @@ export const onGetDrinkError = makeActionCreator(GET_DRINK_ERROR, 'payload')
 export const onGetDrinkSuccess = makeActionCreator(GET_DRINK_SUCCESS, 'payload')
 
 /* Thunks */
-export const onGetDrinkThunk = () => async dispatch => {
-  dispatch(onGetDrink())
-  try {
-    const randomCocktail = await getRandomCocktail()
-    dispatch(onGetDrinkSuccess(randomCocktail))
-  } catch (error) {
-    dispatch(onGetDrinkError(error.message))
+export const onGetDrinkThunk =
+  ({ isFirstTime }) =>
+  async (dispatch, getState) => {
+    if (!isFirstTime || !getState().randomCocktailSection.drink) {
+      dispatch(onGetDrink())
+      try {
+        const randomCocktail = await getRandomCocktail()
+        dispatch(onGetDrinkSuccess(randomCocktail))
+      } catch (error) {
+        dispatch(onGetDrinkError(error.message))
+      }
+    }
   }
-}
