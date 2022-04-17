@@ -1,8 +1,8 @@
-import { Button, Grid, InputAdornment, TextField, Typography } from '@material-ui/core'
-import SearchIcon from '@material-ui/icons/Search'
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import SearchIcon from '@material-ui/icons/Search'
+import { Button, Grid, InputAdornment, TextField, Typography } from '@material-ui/core'
 import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 import { onClearSearchResults, onGetSearchThunk, onUpdateSearchTerm } from './SearchSection.actions'
 import { useStyles } from './SearchSection.styles'
 
@@ -19,7 +19,7 @@ export const SearchSection = () => {
   return (
     <Grid container direction="column" alignItems="center" style={{ maxWidth: '1140px' }}>
       <img
-        src="./assets/images/cocktails-and-drinks.png"
+        src={`${process.env.PUBLIC_URL}/assets/images/cocktails-and-drinks.png`}
         alt="a full table of cocktails and drinks with a coloured water splash in the background"
         style={{ maxWidth: '514px' }}
       />
