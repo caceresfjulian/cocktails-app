@@ -29,11 +29,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - uses: EdricChan03/action-build-deploy-ghpages@v2.6.0
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-      - run: npm install
-      - run: git config --global user.email "caceresf.julian@gmail.com" && git config --global user.name "caceresfjulian"
-      - run: npm run deploy
+          github_token: ${{ secrets.GITHUB_TOKEN }}
