@@ -1,0 +1,8 @@
+.github
+.openshift
+.pipelines
+.setup
+build
+coverage
+node_modules
+public
