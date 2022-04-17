@@ -4,14 +4,16 @@ import { HeaderSection } from './containers/HeaderSection/HeaderSection.containe
 import { RandomSearchView } from './pages/RandomSearchView'
 import { SearchView } from './pages/SearchView'
 
+const BASE_ROUTE = process.env.REACT_APP_BASE_ROUTE
+
 export const Router = () => {
   return (
     <BrowserRouter>
       <HeaderSection />
       <Routes>
-        <Route exact path="/" element={<SearchView />} />
-        <Route path="/random-search" element={<RandomSearchView />} />
-        {/* <Route path="*" element={<h1>Not found</h1>} /> */}
+        <Route path={`${BASE_ROUTE}/random-search`} element={<RandomSearchView />} />
+        <Route exact path={`${BASE_ROUTE}/`} element={<SearchView />} />
+        <Route path="*" element={<SearchView />} />
       </Routes>
     </BrowserRouter>
   )

@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { onClearSearchResults, onGetSearchThunk, onUpdateSearchTerm } from './SearchSection.actions'
 import { useStyles } from './SearchSection.styles'
 
+const BASE_ROUTE = process.env.REACT_APP_BASE_ROUTE
+
 export const SearchSection = () => {
   const dispatch = useDispatch()
   const classes = useStyles()
@@ -49,7 +51,7 @@ export const SearchSection = () => {
             </Button>
           </Grid>
           <Grid item>
-            <Link to="/random-search">
+            <Link to={`/${BASE_ROUTE}/random-search`}>
               <Button variant="contained" color="secondary" style={{ marginTop: '15px', color: '#ffffff' }}>
                 Random search
               </Button>
