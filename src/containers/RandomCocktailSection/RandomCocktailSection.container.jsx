@@ -7,8 +7,6 @@ import { GridContainer } from './RandomCocktailSection.styles'
 import { Link } from 'react-router-dom'
 import { CocktailCard } from '../../components/Surfaces/CocktailCard'
 
-const BASE_ROUTE = process.env.REACT_APP_BASE_ROUTE
-
 const RandomCocktailSection = () => {
   const dispatch = useDispatch()
   const { drink, isLoading, error } = useSelector(state => state.randomCocktailSection)
@@ -34,7 +32,7 @@ const RandomCocktailSection = () => {
         >
           Get a new one
         </Button>
-        <Link to={`/${BASE_ROUTE}`}>
+        <Link to="/">
           <Button variant="contained" color="secondary" style={{ marginTop: '15px', color: '#ffffff' }}>
             Back home
           </Button>
