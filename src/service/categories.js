@@ -1,5 +1,5 @@
 const URL = process.env.REACT_APP_API_URL
-const categoriesPath = 'list.php?c=list'
+const categoriesPath = '/api/json/v1/1/list.php?c=list'
 
 export const getCategories = async () => {
   const response = await fetch(URL + categoriesPath)

@@ -4,12 +4,14 @@ import randomCocktailSectionReducer from '../../containers/RandomCocktailSection
 import counterSectionReducer from '../../containers/CounterSection/CounterSection.reducer'
 import searchSectionReducer from '../../containers/SearchSection/SearchSection.reducer'
 import SnackbarProviderReducer from '../../containers/SnackbarProvider/SnackbarProvider.reducer'
+import detailSectionReducer from '../../containers/DetailSection/DetailSection.reducer'
 
 const reducers = combineReducers({
-  searchSection: searchSectionReducer,
-  randomCocktailSection: randomCocktailSectionReducer,
-  counterSection: counterSectionReducer,
   categoriesSection: categoriesSectionReducer,
+  counterSection: counterSectionReducer,
+  detailSection: detailSectionReducer,
+  randomCocktailSection: randomCocktailSectionReducer,
+  searchSection: searchSectionReducer,
   snackbarProvider: SnackbarProviderReducer
 })
 

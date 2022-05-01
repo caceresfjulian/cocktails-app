@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { onGetDrinkThunk } from './RandomCocktailSection.actions'
-import { Button, Typography } from '@material-ui/core'
+import { Button } from '@material-ui/core'
 import { GridContainer } from './RandomCocktailSection.styles'
 import { Link } from 'react-router-dom'
 import { CocktailCard } from '../../components/Surfaces/CocktailCard'
@@ -19,9 +19,6 @@ const RandomCocktailSection = () => {
 
   return (
     <GridContainer container direction="column" _maxWidth="1140px">
-      <Typography component="h2" variant="h5">
-        A random cocktail
-      </Typography>
       <GridContainer direction="column" alignItems="center">
         <CocktailCard data={drink} isLoading={isLoading} />
         <Button
